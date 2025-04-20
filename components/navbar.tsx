@@ -142,21 +142,7 @@ export default function Navbar() {
                     </Link>
                   </motion.div>
                 ))}
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: navItems.length * 0.05 }}
-                >
-                  <Button
-                    className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white"
-                    onClick={() => {
-                      window.open("/resume.pdf", "_blank")
-                      setIsOpen(false)
-                    }}
-                  >
-                    Resume
-                  </Button>
-                </motion.div>
+               
               </nav>
             </div>
           </motion.div>
