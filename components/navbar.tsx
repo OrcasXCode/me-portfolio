@@ -14,6 +14,7 @@ const navItems = [
   { name: "Experience", href: "#activities" },
   { name: "Education", href: "#education" },
   { name: "Contact", href: "#contact" },
+  { name: "Resume", href: "https://drive.google.com/file/d/1hIiNvZaaVABmFNSjWOdm834nZ97co6S0/view?usp=sharing" },
 ]
 
 export default function Navbar() {
@@ -25,9 +26,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10)
 
-      // Update active section based on scroll position
       const sections = navItems.map((item) => item.href.substring(1))
-
       for (const section of sections.reverse()) {
         const element = document.getElementById(section)
         if (element) {
@@ -40,8 +39,17 @@ export default function Navbar() {
       }
     }
 
+    const handleHashChange = () => {
+      setIsOpen(false)
+    }
+
     window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    window.addEventListener("hashchange", handleHashChange)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("hashchange", handleHashChange)
+    }
   }, [])
 
   return (
@@ -72,24 +80,34 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Link
-                  href={item.href}
-                  className={`relative text-gray-700 hover:text-blue-500 transition-colors ${
-                    activeSection === item.href.substring(1) ? "text-blue-500" : ""
-                  }`}
-                >
-                  {item.name}
-                  {activeSection === item.href.substring(1) && (
-                    <motion.div
-                      layoutId="activeSection"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                </Link>
+                {item.name === "Resume" ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-blue-500 transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={`relative text-gray-700 hover:text-blue-500 transition-colors ${
+                      activeSection === item.href.substring(1) ? "text-blue-500" : ""
+                    }`}
+                  >
+                    {item.name}
+                    {activeSection === item.href.substring(1) && (
+                      <motion.div
+                        layoutId="activeSection"
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600"
+                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      />
+                    )}
+                  </Link>
+                )}
               </motion.div>
             ))}
-        
           </nav>
 
           {/* Mobile Navigation Toggle */}
@@ -120,18 +138,29 @@ export default function Navbar() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
                   >
-                    <Link
-                      href={item.href}
-                      className={`text-gray-700 hover:text-blue-500 py-2 transition-colors block ${
-                        activeSection === item.href.substring(1) ? "text-blue-500 font-medium" : ""
-                      }`}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
+                    {item.name === "Resume" ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-700 hover:text-blue-500 py-2 transition-colors block"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name}
+                      </a>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className={`text-gray-700 hover:text-blue-500 py-2 transition-colors block ${
+                          activeSection === item.href.substring(1) ? "text-blue-500 font-medium" : ""
+                        }`}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    )}
                   </motion.div>
                 ))}
-               
               </nav>
             </div>
           </motion.div>

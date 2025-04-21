@@ -19,7 +19,7 @@ export default function Footer() {
             className="mb-6 md:mb-0"
           >
             <Link href="#home" className="text-2xl font-bold text-white">
-              Om<span className="text-blue-400">Sureja</span>
+              Om<span className="text-blue-400"> Sureja</span>
             </Link>
             <p className="mt-2 text-gray-300 max-w-md">
               Full Stack Developer specializing in building exceptional digital experiences.

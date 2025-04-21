@@ -14,7 +14,7 @@ const projects = [
     tech: ["Next.js", "TypeScript", "PostgreSQL", "Redis", "WebSocket", "Pub/Sub", "Queue"],
     image: "https://img.freepik.com/free-vector/gradient-stock-market-concept_23-2149166929.jpg?t=st=1745174629~exp=1745178229~hmac=a4b3f8979a2fa6692ec420b36cd7da6bb6efcb4383605d9363ba2f51b496b13e&w=1380",
     period: "Sept 2024 - Nov 2024",
-    github: "#",
+    github: "https://github.com/OrcasXCode/exchng_V2.0",
     demo: "#",
   },
   {
@@ -24,7 +24,7 @@ const projects = [
     tech: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
     image: "https://img.freepik.com/free-vector/people-using-mobile-bank-remittance-money_74855-6617.jpg?t=st=1745174693~exp=1745178293~hmac=f4fad4ad49b9f78156b04ed9d8f5023f8d90d022366cb90d8fe660ec2e7b092f&w=1060",
     period: "Jan 2024 - Feb 2024",
-    github: "#",
+    github: "https://github.com/OrcasXCode/paytm_V2.1",
     demo: "#",
   },
   {
@@ -34,7 +34,7 @@ const projects = [
     tech: ["Node.js", "Express", "MongoDB", "React.js", "Tailwind CSS"],
     image: "https://img.freepik.com/free-vector/online-shopping-concept-landing-page_52683-22153.jpg?t=st=1745174720~exp=1745178320~hmac=28bff65fcd0c8ea8d7670ec5bab5b2a3e0ed0ee281c1270f13992bb491c6721e&w=1380",
     period: "Feb 2023 - Apr 2023",
-    github: "#",
+    github: "https://github.com/OrcasXCode/EcommerceStore",
     demo: "#",
   },
 ]
