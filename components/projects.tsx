@@ -149,14 +149,14 @@ export default function Projects() {
                     <Github className="h-4 w-4" />
                     Code
                   </Button>
-                  <Button
+                  {/* <Button
                     size="sm"
                     className="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
                     onClick={() => window.open(project.demo, "_blank")}
                   >
                     <ExternalLink className="h-4 w-4" />
                     Live Demo
-                  </Button>
+                  </Button> */}
                 </CardFooter>
               </Card>
             </motion.div>
